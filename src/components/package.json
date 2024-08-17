@@ -8,7 +8,8 @@
   "license": "MIT",
   "scripts": {
     "build": "tsup src/**/*.ts --dts --format esm,cjs --minify --clean",
-    "changeset": "npx changeset"
+    "release": "yarn build && changeset publish",
+    "lint": "tsc"
   },
   "peerDependencies": {
     "react": ">=17.0.0"
