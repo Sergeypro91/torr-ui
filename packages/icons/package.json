@@ -1,17 +1,21 @@
 {
   "name": "@torr-ui/icons",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sergeypro91/torr-ui.git",
+    "directory": "packages/icons"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "browser": "./src/index.ts",
   "main": "./src/index.ts",
   "scripts": {
     "generate-themed-icons": "cd ./src && npx rimraf ./generated-themed-icons && svgr --config-file .svgr/svgr.themed-config.js themed-assets",
     "generate-custom-icons": "cd ./src && npx rimraf ./generated-custom-icons && svgr --config-file .svgr/svgr.custom-config.js custom-assets",
     "svgr": "yarn generate-themed-icons && yarn generate-custom-icons",
-    "build": "node pack",
-    "lint:types": "tsc --noEmit",
-    "lint": "eslint --fix --quiet",
-    "lint:all": "eslint \"**/*.{ts,tsx}\" --fix --quiet"
+    "build": "tsup src/**/*.ts --dts --format esm,cjs --minify --clean"
   },
   "peerDependencies": {
     "react": ">=17.0.0"
@@ -19,7 +23,8 @@
   "devDependencies": {
     "@astral/eslint-config-react-ts": "^2.4.0",
     "@babel/types": "^7.17.10",
-    "@svgr/cli": "^6.2.0"
+    "@svgr/cli": "^6.2.0",
+    "tsup": "^8.2.4"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
