@@ -16,16 +16,22 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: yarn/action-setup@v2
-        with:
-          version: 7
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
-          cache: "yarn"
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-      - run: yarn --frozen-lockfile
+      - name: Setup yarn
+        run: npm install -g yarn
+
+
+      - name: Setup Nodejs with yarn caching
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.12.x
+          cache: yarn
+
+      - run: corepack enable
+      - run: yarn install
+
       - name: Create Release Pull Request or Publish
         id: changesets
         uses: changesets/action@v1
