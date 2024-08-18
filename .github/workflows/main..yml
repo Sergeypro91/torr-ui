@@ -1,0 +1,28 @@
+name: CI
+on:
+  push:
+    branches:
+      - "**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup yarn
+        run: npm install -g yarn
+
+      - name: Setup Nodejs with yarn caching
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.12.x
+          cache: yarn
+
+      - name: Install Yarn package manager
+        run: corepack enable
+      - run: yarn install --frozen-lockfile
+
+      - name: Lint es & ts
+        run: yarn lint:all
