@@ -1,4 +1,4 @@
-# @torr-ui/icons
+# @torr-app/icons
 
 This package is designed to use icons. When building a package, icons are generated from directories with **svg** files:
 

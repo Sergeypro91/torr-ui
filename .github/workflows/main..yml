@@ -22,7 +22,7 @@ jobs:
 
       - name: Install Yarn package manager
         run: corepack enable
-      - run: yarn install
+      - run: yarn install --frozen-lockfile
 
       - name: Lint es & ts
         run: yarn lint:all

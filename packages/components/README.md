@@ -1,3 +1,3 @@
-# @torr-ui/components
+# @torr-app/components
 
 Storybook and UI component library

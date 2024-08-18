@@ -4660,9 +4660,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@torr-ui/components@workspace:packages/components":
+"@torr-app/components@workspace:packages/components":
   version: 0.0.0-use.local
-  resolution: "@torr-ui/components@workspace:packages/components"
+  resolution: "@torr-app/components@workspace:packages/components"
   dependencies:
     tsup: "npm:^8.2.4"
   peerDependencies:
@@ -4670,9 +4670,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@torr-ui/icons@workspace:packages/icons":
+"@torr-app/icons@workspace:packages/icons":
   version: 0.0.0-use.local
-  resolution: "@torr-ui/icons@workspace:packages/icons"
+  resolution: "@torr-app/icons@workspace:packages/icons"
   dependencies:
     "@astral/eslint-config-react-ts": "npm:^2.4.0"
     "@babel/types": "npm:^7.17.10"
@@ -11778,9 +11778,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"torr-ui@workspace:.":
+"torr-app@workspace:.":
   version: 0.0.0-use.local
-  resolution: "torr-ui@workspace:."
+  resolution: "torr-app@workspace:."
   dependencies:
     "@changesets/cli": "npm:^2.27.7"
     "@chromatic-com/storybook": "npm:^1.6.1"
