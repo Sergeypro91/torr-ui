@@ -14,13 +14,15 @@ jobs:
       - name: Setup yarn
         run: npm install -g yarn
 
-
       - name: Setup Nodejs with yarn caching
         uses: actions/setup-node@v3
         with:
           node-version: 18.12.x
           cache: yarn
 
-      - run: corepack enable
+      - name: Install Yarn package manager
+        run: corepack enable
       - run: yarn install
-      - run: yarn lint && yarn build
+
+      - name: Lint es & ts
+        run: lint:all
