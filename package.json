@@ -10,9 +10,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "build-packages": "yarn build-components && yarn build-icons",
+    "build-packages": "yarn build-components && yarn build-icons && yarn build-styles",
     "build-components": "yarn workspace @torr-app/components build",
     "build-icons": "yarn workspace @torr-app/icons build",
+    "build-styles": "yarn workspace @torr-app/styles build",
     "bump-version": "yarn changeset add && yarn changeset version",
     "release": "yarn build-packages && yarn changeset publish",
     "lint": "eslint --fix --quiet",

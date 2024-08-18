@@ -4686,6 +4686,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@torr-app/styles@workspace:packages/styles":
+  version: 0.0.0-use.local
+  resolution: "@torr-app/styles@workspace:packages/styles"
+  dependencies:
+    tsup: "npm:^8.2.4"
+  peerDependencies:
+    react: ">=17.0.0"
+  languageName: unknown
+  linkType: soft
+
 "@trysound/sax@npm:0.2.0":
   version: 0.2.0
   resolution: "@trysound/sax@npm:0.2.0"
