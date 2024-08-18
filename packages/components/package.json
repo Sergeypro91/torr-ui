@@ -1,6 +1,13 @@
 {
   "name": "@torr-ui/components",
   "version": "0.0.1",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "files": [
+    "dist", "README.md", "CHANGELOG.md"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Sergeypro91/torr-ui.git",
@@ -9,10 +16,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "license": "MIT",
   "scripts": {
     "build": "tsup src/**/*.ts --dts --format esm,cjs --minify --clean"
   },
