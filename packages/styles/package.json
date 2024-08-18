@@ -13,7 +13,7 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/Sergeypro91/torr-ui.git",
-    "directory": "packages/components"
+    "directory": "packages/styles"
   },
   "publishConfig": {
     "access": "public"
