@@ -25,4 +25,4 @@ jobs:
       - run: yarn install
 
       - name: Lint es & ts
-        run: lint:all
+        run: yarn lint:all
