@@ -10,6 +10,7 @@
     "README.md",
     "CHANGELOG.md"
   ],
+  "style": "./dist/index.css",
   "repository": {
     "type": "git",
     "url": "https://github.com/Sergeypro91/torr-ui.git",
