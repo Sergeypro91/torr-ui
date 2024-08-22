@@ -1,6 +1,6 @@
 import type { Preview } from '@storybook/react';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import '@torr-app/styles/dist/index.css';
+import '@torr-app/styles/src';
 
 const preview: Preview = {
   parameters: {

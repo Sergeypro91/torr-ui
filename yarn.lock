@@ -3770,7 +3770,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@radix-ui/themes@npm:^3.1.1":
+"@radix-ui/themes@npm:^3.1.3":
   version: 3.1.3
   resolution: "@radix-ui/themes@npm:3.1.3"
   dependencies:
@@ -4101,17 +4101,6 @@ __metadata:
   peerDependencies:
     storybook: ^8.2.9
   checksum: 10c0/528790a13774e586d885baba9581bea730017862bcc68330f80a2c6bfc3acf6807908e00f9a94230fc7f358da985aeec8f3c4ed2e267f7f641440a256452a2c1
-  languageName: node
-  linkType: hard
-
-"@storybook/addon-onboarding@npm:^8.2.9":
-  version: 8.2.9
-  resolution: "@storybook/addon-onboarding@npm:8.2.9"
-  dependencies:
-    react-confetti: "npm:^6.1.0"
-  peerDependencies:
-    storybook: ^8.2.9
-  checksum: 10c0/fe604e3ad5d1b6c848cc4260deeec5a0e2689179409b387c6b0f6a8f9d943ed9ddcf12753e026d51b82b420ad503be46bf7a7599200cefd96c35b30a8fa85c6b
   languageName: node
   linkType: hard
 
@@ -4664,13 +4653,16 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@torr-app/components@workspace:packages/components"
   dependencies:
+    "@radix-ui/themes": "npm:^3.1.3"
+    "@torr-app/icons": "workspace:^"
+    "@torr-app/utils": "workspace:^"
     tsup: "npm:^8.2.4"
   peerDependencies:
     react: ">=17.0.0"
   languageName: unknown
   linkType: soft
 
-"@torr-app/icons@workspace:packages/icons":
+"@torr-app/icons@workspace:^, @torr-app/icons@workspace:packages/icons":
   version: 0.0.0-use.local
   resolution: "@torr-app/icons@workspace:packages/icons"
   dependencies:
@@ -4689,6 +4681,16 @@ __metadata:
 "@torr-app/styles@workspace:^, @torr-app/styles@workspace:packages/styles":
   version: 0.0.0-use.local
   resolution: "@torr-app/styles@workspace:packages/styles"
+  dependencies:
+    tsup: "npm:^8.2.4"
+  peerDependencies:
+    react: ">=17.0.0"
+  languageName: unknown
+  linkType: soft
+
+"@torr-app/utils@workspace:^, @torr-app/utils@workspace:packages/utils":
+  version: 0.0.0-use.local
+  resolution: "@torr-app/utils@workspace:packages/utils"
   dependencies:
     tsup: "npm:^8.2.4"
   peerDependencies:
@@ -11376,6 +11378,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"storybook-css-modules@npm:^1.0.8":
+  version: 1.0.8
+  resolution: "storybook-css-modules@npm:1.0.8"
+  checksum: 10c0/d98c7166b5c32ba2d85a99821eefb23e2bf97c37ddd3a197e71187582d9da9a2093c3c97a166348f347d1e6fa696bd92996d444b3ee1d151bd52e06e23535d44
+  languageName: node
+  linkType: hard
+
 "storybook@npm:^8.2.9":
   version: 8.2.9
   resolution: "storybook@npm:8.2.9"
@@ -11795,11 +11804,9 @@ __metadata:
     "@changesets/cli": "npm:^2.27.7"
     "@chromatic-com/storybook": "npm:^1.6.1"
     "@eslint/js": "npm:^9.7.0"
-    "@radix-ui/themes": "npm:^3.1.1"
     "@storybook/addon-essentials": "npm:^8.2.9"
     "@storybook/addon-interactions": "npm:^8.2.9"
     "@storybook/addon-links": "npm:^8.2.9"
-    "@storybook/addon-onboarding": "npm:^8.2.9"
     "@storybook/blocks": "npm:^8.2.9"
     "@storybook/manager-api": "npm:^8.2.9"
     "@storybook/react": "npm:^8.2.9"
@@ -11824,6 +11831,7 @@ __metadata:
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     storybook: "npm:^8.2.9"
+    storybook-css-modules: "npm:^1.0.8"
     typescript: "npm:^5.5.4"
     typescript-eslint: "npm:^7.17.0"
     vite: "npm:^5.3.5"
