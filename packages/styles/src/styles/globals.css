@@ -4,6 +4,7 @@
 
 :root {
   font-family: 'Montserrat', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
   line-height: 1.5;
   font-weight: 400;
 
@@ -19,55 +20,59 @@
 
 html {
   color: var(--white);
-  font-size: var(--default-size) rem;
+  font-size: inherit;
+}
+
+body {
+  font-size: inherit;
 }
 
 h1 {
   transition: var(--transition);
 
-  font-size: calc(76 / var(--default-size) * 1rem);
+  font-size: var(--h1-fs);
+  line-height: var(--h1-lh);
   font-weight: 500;
-  line-height: calc(92 / var(--default-size) * 1rem);
 }
 
 h2 {
   transition: var(--transition);
 
-  font-size: calc(47 / var(--default-size) * 1rem);
-  font-weight: 500;
-  line-height: calc(69 / var(--default-size) * 1rem);
+    font-size: var(--h2-fs);
+    line-height: var(--h2-lh);
+    font-weight: 500;
 }
 
 h3 {
   transition: var(--transition);
 
-  font-size: calc(29 / var(--default-size) * 1rem);
-  font-weight: 500;
-  line-height: calc(35 / var(--default-size) * 1rem);
+    font-size: var(--h3-fs);
+    line-height: var(--h3-lh);
+    font-weight: 500;
 }
 
 h4 {
   transition: var(--transition);
 
-  font-size: calc(18 / var(--default-size) * 1rem);
-  font-weight: 500;
-  line-height: calc(23 / var(--default-size) * 1rem);
+    font-size: var(--h4-fs);
+    line-height: var(--h4-lh);
+    font-weight: 500;
 }
 
 p {
   transition: var(--transition);
 
-  font-size: calc(14 / var(--default-size) * 1rem);
-  font-weight: 500;
-  line-height: calc(17 / var(--default-size) * 1rem);
+    font-size: var(--h5-fs);
+    line-height: var(--h5-lh);
+    font-weight: 500;
 }
 
 small {
   transition: var(--transition);
 
-  font-size: calc(12 / var(--default-size) * 1rem);
-  font-weight: 500;
-  line-height: calc(15 / var(--default-size) * 1rem);
+    font-size: var(--h6-fs);
+    line-height: var(--h6-lh);
+    font-weight: 500;
 }
 
 a {
@@ -79,8 +84,10 @@ a {
   }
 }
 
-
 button {
+  transition: var(--transition);
+
+  font-weight: 500;
   -webkit-tap-highlight-color: transparent; /* For iOS Safari */
 }
 
@@ -107,4 +114,12 @@ button {
   ::-webkit-scrollbar {
     display: none;
   }
+}
+
+/* Turn off hover effects on touch devices (typically mobile) */
+@media (hover: none) {
+    .button:hover {
+        background-color: initial !important;
+        color: initial !important;
+    }
 }

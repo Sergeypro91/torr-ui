@@ -31,7 +31,7 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": false,
     "noFallthroughCasesInSwitch": true,
-    "resolveJsonModule": true,
+    "resolveJsonModule": true
   },
   "types": [
     "vitest/globals"

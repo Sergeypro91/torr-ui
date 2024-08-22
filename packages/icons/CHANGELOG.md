@@ -1,5 +1,11 @@
 # @torr-app/icons
 
+## 0.0.3
+
+### Patch Changes
+
+- Add new icons "LoadingOutlineMd"
+
 ## 0.0.2
 
 ### Patch Changes
