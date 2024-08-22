@@ -1,6 +1,6 @@
 import { ComponentProps } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { HomeOutlineMd } from '@torr-app/icons';
+import { HomeOutlineMd } from '@torr-app/icons/src';
 import { fn } from '@storybook/test';
 
 import { Button, ButtonProps } from './Button';

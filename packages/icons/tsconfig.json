@@ -7,5 +7,10 @@
     "./**/*.tsx",
     "./**/*.stories.tsx"
   ],
-  "exclude": ["node_modules", "lib", "generated-custom-icons", "generated-themed-icons"]
+  "exclude": [
+    "node_modules",
+    "lib",
+    "generated-custom-icons",
+    "generated-themed-icons"
+  ]
 }

@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { LoadingOutlineMd } from '@torr-app/icons';
+import { LoadingOutlineMd } from '@torr-app/icons/src';
 
 import style from './RenderIcon.module.css';
 

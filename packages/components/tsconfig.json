@@ -8,10 +8,7 @@
   },
   "compilerOptions": {
     "module": "esnext",
-    "lib": [
-      "dom",
-      "esnext"
-    ],
+    "lib": ["dom", "esnext"],
     "moduleResolution": "node",
     "jsx": "react-jsx",
     "sourceMap": false,
@@ -31,18 +28,9 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": false,
     "noFallthroughCasesInSwitch": true,
-    "resolveJsonModule": true,
+    "resolveJsonModule": true
   },
-  "types": [
-    "vitest/globals"
-  ],
-  "include": [
-    "./**/*.ts",
-    "./**/*.tsx",
-    "./*.js",
-    "./*.ts"
-  ],
-  "exclude": [
-    "lib"
-  ]
+  "types": ["vitest/globals"],
+  "include": ["./**/*.ts", "./**/*.tsx", "./*.js", "./*.ts"],
+  "exclude": ["lib"]
 }

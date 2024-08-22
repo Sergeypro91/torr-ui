@@ -6,11 +6,11 @@ import {
   forwardRef,
 } from 'react';
 import { Slot } from '@radix-ui/themes';
-import { cn } from '@torr-app/utils';
+import { cn } from '@torr-app/utils/src';
+import { LoadingOutlineMd } from '@torr-app/icons/src';
 
 import style from './Button.module.css';
 import { RenderIcon } from './RenderIcon';
-import { LoadingOutlineMd } from '@torr-app/icons';
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   asChild?: boolean;
