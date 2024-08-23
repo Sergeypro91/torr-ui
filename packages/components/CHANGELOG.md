@@ -1,5 +1,11 @@
 # @torr-app/components
 
+## 0.1.0
+
+### Minor Changes
+
+- Add "Tooltip" component
+
 ## 0.0.5
 
 ### Patch Changes
