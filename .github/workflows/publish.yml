@@ -17,20 +17,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup yarn
         run: npm install -g yarn
 
 
       - name: Setup Nodejs with yarn caching
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18.12.x
-          cache: yarn
+          node-version: 20
+          cache: 'yarn'
 
-      - run: corepack enable
-      - run: yarn install --frozen-lockfile
+      - name: Enable corepack
+        run: corepack enable
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
 
       - name: Create Release Pull Request or Publish
         id: changesets

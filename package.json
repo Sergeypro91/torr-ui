@@ -22,7 +22,7 @@
     "generate-icons": "cd packages/icons && yarn generate-themed-icons && yarn generate-custom-icons",
     "preview": "vite preview",
     "storybook": "storybook dev -p 5001",
-    "build-storybook": "storybook build",
+    "build-storybook": "storybook build -o ./dist",
     "check_package_update": "yarn dlx npm-check -u"
   },
   "dependencies": {
