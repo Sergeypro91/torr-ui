@@ -1,9 +1,13 @@
 import type { Preview } from '@storybook/react';
+import { themes } from '@storybook/theming';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import '@torr-app/styles/src';
 
 const preview: Preview = {
   parameters: {
+    docs: {
+      theme: themes.dark,
+    },
     backgrounds: {
       default: 'black',
       values: [
