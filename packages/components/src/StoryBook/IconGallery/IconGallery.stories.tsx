@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Icon, type IconProps, iconNames } from '../../Icon';
+import { Icon, type IconNames, type IconProps, iconNames } from '../../Icon';
 import { IconSample } from '../IconSample';
 
 import style from './IconGallery.module.css';
@@ -38,7 +38,7 @@ const IconGalleryTemplate = (args: StoryProps) => {
 
   return (
     <section className={style.gallery}>
-      {iconNames.filter(filterIcon(args.search)).map((name) => (
+      {iconNames.filter(filterIcon(args.search)).map((name: IconNames) => (
         <IconSample key={name} name={name}>
           <Icon {...args} id={name} />
         </IconSample>
