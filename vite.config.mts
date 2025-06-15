@@ -7,5 +7,8 @@ export default defineConfig({
   base: '/torr-ui/',
   build: {
     sourcemap: true,
+    rollupOptions: {
+      external: ['@torr-app/styles/global.css'],
+    }
   },
 });
