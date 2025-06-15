@@ -37,10 +37,10 @@ jobs:
         run: npm ci
 
       - name: Build workspaces
-        run: npm run build-packages
+        run: npm run packages:build
 
       - name: Build Storybook
-        run: npm run build-storybook
+        run: npm run storybook:build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

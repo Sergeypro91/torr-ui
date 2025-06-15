@@ -17,7 +17,7 @@ jobs:
         run: npm ci
 
       - name: Build workspaces
-        run: npm run build-packages
+        run: npm run packages:build
 
       - name: Format, Lint es & ts
         run: npm run lint:all

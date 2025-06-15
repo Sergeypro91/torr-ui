@@ -1,5 +1,14 @@
 # @torr-app/components
 
+## 1.0.1
+
+### Patch Changes
+
+- Improve package scripts
+- Updated dependencies
+  - @torr-app/icons@1.0.1
+  - @torr-app/utils@1.0.1
+
 ## 1.0.0
 
 ### Major Changes

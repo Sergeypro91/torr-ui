@@ -41,10 +41,10 @@ npm run lint:all
 npm run storybook:doctor
 
 # Fix formating issues:
-npm run fix:format
+npm run format:fix
 
 # Fix linting issues:
-npm run fix:lint
+npm run lint:fix
 
 # Check packages updates:
 npm run check_package_update
@@ -63,7 +63,7 @@ The deployment consists of several parts:
 Package versioning handling by [`@changesets/cli`][changesets]
 
 ```bash
-npm run bump-version
+npm run packages:bump-version
 ```
 
 ### Release packages
