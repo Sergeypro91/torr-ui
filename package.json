@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "build-packages": "npm run build-components && npm run build-icons && npm run build-styles && npm run build-utils",
+    "build-packages": "npm run build-icons && npm run build-styles && npm run build-utils && npm run build-components",
     "build-components": "npm run build --workspace=@torr-app/components",
     "build-icons": "npm run build --workspace=@torr-app/icons",
     "build-styles": "npm run build --workspace=@torr-app/styles",
