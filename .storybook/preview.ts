@@ -1,7 +1,6 @@
 import { themes } from 'storybook/theming';
 import type { Preview } from '@storybook/react-vite';
-
-import './style.css';
+import '@torr-app/styles/global.css';
 
 const preview: Preview = {
   parameters: {

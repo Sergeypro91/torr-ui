@@ -11,7 +11,7 @@
       "require": "./dist/index.cjs",
       "types": "./dist/index.d.ts"
     },
-    "./styles.css": "./dist/styles/index.css"
+    "./global.css": "./dist/styles/index.css"
   },
   "files": [
     "dist",
