@@ -26,6 +26,7 @@
     "storybook": "storybook dev -p 5001",
     "storybook:doctor": "npx storybook doctor",
     "build-storybook": "storybook build",
+    "serve-storybook": "npx http-server storybook-static",
     "check_package_update": "npx npm-check -u"
   },
   "dependencies": {

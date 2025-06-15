@@ -36,6 +36,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Build workspaces
+        run: npm run build-packages
+
       - name: Build Storybook
         run: npm run build-storybook
 
