@@ -2,7 +2,15 @@
   "name": "@torr-app/styles",
   "version": "1.0.0",
   "license": "MIT",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
     "./styles.css": "./dist/styles/index.css"
   },
   "files": [
@@ -12,7 +20,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Sergeypro91/torr-ui.git",
+    "url": "git+https://github.com/Sergeypro91/torr-ui.git",
     "directory": "packages/styles"
   },
   "publishConfig": {
