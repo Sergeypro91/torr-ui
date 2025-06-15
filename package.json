@@ -16,7 +16,7 @@
     "build-styles": "npm run build --workspace=@torr-app/styles",
     "build-utils": "npm run build --workspace=@torr-app/utils",
     "bump-version": "npx @changesets/cli add && npx @changesets/cli version",
-    "release": "npm run build-packages && npm run npx @changesets/cli publish",
+    "release": "npm run build-packages && npx @changesets/cli publish",
     "check:formatter": "npx @biomejs/biome format",
     "fix:format": "npx @biomejs/biome format --write",
     "check:linter": "npx @biomejs/biome lint",
