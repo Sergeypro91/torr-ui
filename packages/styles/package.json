@@ -1,6 +1,6 @@
 {
   "name": "@torr-app/styles",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -10,7 +10,9 @@
     "README.md",
     "CHANGELOG.md"
   ],
-  "style": "./dist/index.css",
+  "exports": {
+    ".": "./dist/styles/index.css"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Sergeypro91/torr-ui.git",
@@ -20,12 +22,9 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsup src/**/*.ts --dts --format esm,cjs --minify --clean"
-  },
-  "peerDependencies": {
-    "react": ">=17.0.0"
+    "build": "tsup src/**/*.ts --dts --format esm, cjs --minify --clean"
   },
   "devDependencies": {
-    "tsup": "^8.2.4"
+    "tsup": "^8.5.0"
   }
 }

@@ -1,13 +1,12 @@
 import { ComponentProps } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
-import { HomeOutlineMd } from '@torr-app/icons/src';
-import { fn } from '@storybook/test';
+import { fn } from 'storybook/test';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+
+import { Icon, type IconNames, iconNames } from '../Icon';
 
 import { Button, ButtonProps } from './Button';
 
 type StoryProps = ComponentProps<typeof Button>;
-
-const ICONS = { undefined, HomeOutlineMd };
 
 const meta = {
   title: 'Components/Button',
@@ -32,11 +31,11 @@ const meta = {
     },
     iconStart: {
       control: 'select',
-      options: Object.keys(ICONS),
+      options: [undefined, ...iconNames],
     },
     iconEnd: {
       control: 'select',
-      options: Object.keys(ICONS),
+      options: [undefined, ...iconNames],
     },
     disabled: {
       control: { type: 'boolean' },
@@ -72,15 +71,16 @@ export default meta;
 type Story = StoryObj<StoryProps>;
 
 const ButtonTemplate = (args: ButtonProps) => {
-  const iconStart = ICONS[args.iconStart as unknown as keyof typeof ICONS];
-  const iconEnd = ICONS[args.iconEnd as unknown as keyof typeof ICONS];
+  const { iconStart: start, iconEnd: end, ...restArgs } = args;
+  const iconStart = start ? <Icon id={start as IconNames} /> : undefined;
+  const iconEnd = end ? <Icon id={end as IconNames} /> : undefined;
 
-  return <Button {...args} iconStart={iconStart} iconEnd={iconEnd} />;
+  return <Button {...restArgs} {...{ iconStart, iconEnd }} />;
 };
 
 export const Template: Story = {
   name: 'Template',
-  render: (args) => <ButtonTemplate {...args} />,
+  render: ButtonTemplate,
 };
 
 export const FullWidth = () => (
@@ -91,9 +91,17 @@ export const FullWidth = () => (
 
 export const WithIcon = () => (
   <div style={{ display: 'flex', gap: '16px' }}>
-    <Button label="Button" variant="ghost" iconStart={HomeOutlineMd} />
-    <Button label="Button" variant="ghost" iconEnd={HomeOutlineMd} />
-    <Button variant="ghost" iconEnd={HomeOutlineMd} />
+    <Button
+      label="Button"
+      variant="ghost"
+      iconStart={<Icon id="home-outline" />}
+    />
+    <Button
+      label="Button"
+      variant="ghost"
+      iconEnd={<Icon id="home-outline" />}
+    />
+    <Button variant="ghost" iconEnd={<Icon id="home-outline" />} />
   </div>
 );
 

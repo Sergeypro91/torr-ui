@@ -10,7 +10,7 @@
   cursor: pointer;
 
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     border: 1px solid transparent;
@@ -36,12 +36,12 @@
       display: none;
     }
 
-    &[data-loader-overlap='true'] {
+    &[data-loader-overlap="true"] {
       opacity: 0.2;
     }
   }
 
-  &[data-loading='true'] {
+  &[data-loading="true"] {
     cursor: progress;
   }
 
@@ -50,14 +50,14 @@
     cursor: not-allowed;
   }
 
-  &:focus-visible {
+  &:focus:focus-visible {
     &:before {
       outline-color: var(--focus);
     }
   }
 
   /* SIZES */
-  &[data-size='sm'] {
+  &[data-size="sm"] {
     font-size: var(--h5-fs);
     line-height: var(--h5-lh);
 
@@ -65,7 +65,7 @@
     padding: var(--module);
     border-radius: var(--local-border-radius);
 
-    &:not([data-icon-only='true']) {
+    &:not([data-icon-only="true"]) {
       padding-inline: calc(var(--module) * 2);
     }
 
@@ -75,14 +75,14 @@
     }
   }
 
-  &[data-size='md'] {
+  &[data-size="md"] {
     font-size: var(--h4-fs);
     line-height: var(--h4-lh);
 
     gap: calc(var(--module) * 2);
     padding: calc(var(--module) * 2);
 
-    &:not([data-icon-only='true']) {
+    &:not([data-icon-only="true"]) {
       padding-inline: calc(var(--module) * 4);
     }
 
@@ -92,14 +92,14 @@
     }
   }
 
-  &[data-size='lg'] {
+  &[data-size="lg"] {
     font-size: var(--h4-fs);
     line-height: var(--h4-lh);
 
     gap: calc(var(--module) * 2);
     padding: calc(var(--module) * 4);
 
-    &:not([data-icon-only='true']) {
+    &:not([data-icon-only="true"]) {
       padding-inline: calc(var(--module) * 4);
     }
 
@@ -110,36 +110,36 @@
   }
 
   /* COLORS */
-  &[data-color='primary'] {
+  &[data-color="primary"] {
     color: color-mix(in srgb, var(--primary) 80%, var(--black));
   }
 
-  &[data-color='success'] {
+  &[data-color="success"] {
     color: var(--success);
   }
 
-  &[data-color='warning'] {
+  &[data-color="warning"] {
     color: var(--warning);
   }
 
-  &[data-color='error'] {
+  &[data-color="error"] {
     color: var(--error);
   }
 
   /* VARIANTS */
-  &[data-variant='ghost'] {
+  &[data-variant="ghost"] {
     &:before {
       background-color: color-mix(in srgb, currentColor 40%, transparent);
     }
   }
 
-  &[data-variant='outline'] {
+  &[data-variant="outline"] {
     &:before {
       border-color: currentColor;
     }
   }
 
-  &[data-variant='contained'] {
+  &[data-variant="contained"] {
     background-color: currentColor;
 
     span {
@@ -152,7 +152,7 @@
   }
 
   /* FULL WIDTH */
-  &[data-full-width='true'] {
+  &[data-full-width="true"] {
     width: 100%;
   }
 

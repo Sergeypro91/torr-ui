@@ -1,6 +1,6 @@
 {
   "name": "@torr-app/icons",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -10,6 +10,13 @@
     "README.md",
     "CHANGELOG.md"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./sprite.svg": "./public/sprite.svg"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Sergeypro91/torr-ui.git",
@@ -19,23 +26,18 @@
     "access": "public"
   },
   "scripts": {
-    "generate-themed-icons": "cd ./src && npx rimraf ./generated-themed-icons && svgr --config-file .svgr/svgr.themed-config.js themed-assets",
-    "generate-custom-icons": "cd ./src && npx rimraf ./generated-custom-icons && svgr --config-file .svgr/svgr.custom-config.js custom-assets",
-    "svgr": "yarn generate-themed-icons && yarn generate-custom-icons",
+    "minimize:svg": "svgo -f src/svg-raw -o src/svg-sources && rm src/svg-raw/*",
+    "build:sprite-icon": "tsx src/build-icons.mts --log=verbose",
     "build": "tsup src/**/*.ts --dts --format esm,cjs --minify --clean"
   },
-  "peerDependencies": {
-    "react": ">=17.0.0"
+  "dependencies": {
+    "fs-extra": "^11.3.0",
+    "glob": "^11.0.3",
+    "node-html-parser": "^7.0.1"
   },
   "devDependencies": {
-    "@astral/eslint-config-react-ts": "^2.4.0",
-    "@babel/types": "^7.17.10",
-    "@svgr/cli": "^6.2.0",
-    "tsup": "^8.2.4"
-  },
-  "dependencies": {
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
-    "@mui/material": "5.13.0"
+    "@types/fs-extra": "^11.0.4",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.3"
   }
 }

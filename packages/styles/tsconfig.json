@@ -8,12 +8,8 @@
   },
   "compilerOptions": {
     "module": "esnext",
-    "lib": [
-      "dom",
-      "esnext"
-    ],
+    "lib": ["dom", "esnext"],
     "moduleResolution": "node",
-    "jsx": "react-jsx",
     "sourceMap": false,
     "declaration": true,
     "esModuleInterop": true,
@@ -33,16 +29,7 @@
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true
   },
-  "types": [
-    "vitest/globals"
-  ],
-  "include": [
-    "global.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "./*.js"
-  ],
-  "exclude": [
-    "lib"
-  ]
+  "types": ["vitest/globals"],
+  "include": ["global.d.ts", "**/*.ts", "**/*.tsx", "./*.js"],
+  "exclude": ["lib"]
 }

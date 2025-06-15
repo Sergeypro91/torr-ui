@@ -1,2 +1,1 @@
-export * from './generated-themed-icons';
-export * from './generated-custom-icons';
+export { type IconNames, iconNames } from '../public/name.ts';

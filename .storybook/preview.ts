@@ -1,7 +1,6 @@
-import type { Preview } from '@storybook/react';
-import { themes } from '@storybook/theming';
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import '@torr-app/styles/src';
+import { themes } from 'storybook/theming';
+import type { Preview } from '@storybook/react-vite';
+import '@torr-app/styles';
 
 const preview: Preview = {
   parameters: {
@@ -20,9 +19,6 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
-    },
-    viewport: {
-      viewports: INITIAL_VIEWPORTS,
     },
   },
 };

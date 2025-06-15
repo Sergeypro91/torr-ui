@@ -1,13 +1,14 @@
 import {
   ButtonHTMLAttributes,
   CSSProperties,
-  FC,
-  MouseEvent,
   forwardRef,
+  MouseEvent,
+  ReactNode,
 } from 'react';
 import { Slot } from '@radix-ui/themes';
-import { cn } from '@torr-app/utils/src';
-import { LoadingOutlineMd } from '@torr-app/icons/src';
+import { cn } from '@torr-app/utils';
+
+import { Icon } from '../Icon';
 
 import style from './Button.module.css';
 import { RenderIcon } from './RenderIcon';
@@ -17,8 +18,8 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   borderRadius?: number;
   color?: 'primary' | 'success' | 'warning' | 'error';
   fullWidth?: boolean;
-  iconStart?: FC;
-  iconEnd?: FC;
+  iconStart?: ReactNode;
+  iconEnd?: ReactNode;
   label?: string;
   loading?: boolean;
   size?: 'sm' | 'md' | 'lg';
@@ -74,7 +75,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {...props}
       >
         <RenderIcon isLoading={loading} Icon={IconStart} />
-        {isLoaderOverlap && <LoadingOutlineMd className={style.loader} />}
+        {isLoaderOverlap && (
+          <Icon id="dashed-circle" className={style.loader} />
+        )}
         <span data-loader-overlap={isLoaderOverlap}>{label}</span>
         <RenderIcon isLoading={loading} Icon={IconEnd} />
       </Comp>

@@ -1,0 +1,32 @@
+.icon-sample {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    content: "Copied!";
+    background-color: var(--success);
+    padding: var(--module);
+    border-radius: var(--module);
+    opacity: 0;
+    transition-property: display, opacity;
+    transition-duration: 300ms;
+    transition-behavior: allow-discrete;
+  }
+
+  &[data-is-copied="true"]::before {
+    display: block;
+    opacity: 1;
+
+    @starting-style {
+      opacity: 0;
+    }
+  }
+}

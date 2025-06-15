@@ -1,5 +1,11 @@
 # @torr-app/icons
 
+## 1.0.0
+
+### Major Changes
+
+- Version 1.0.0
+
 ## 0.0.3
 
 ### Patch Changes

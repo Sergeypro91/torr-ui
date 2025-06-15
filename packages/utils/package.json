@@ -1,6 +1,6 @@
 {
   "name": "@torr-app/utils",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -21,10 +21,7 @@
   "scripts": {
     "build": "tsup src/**/*.ts --dts --format esm,cjs --minify --clean"
   },
-  "peerDependencies": {
-    "react": ">=17.0.0"
-  },
   "devDependencies": {
-    "tsup": "^8.2.4"
+    "tsup": "^8.5.0"
   }
 }

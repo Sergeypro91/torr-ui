@@ -23,14 +23,8 @@ ___
 > At the time of removing `corepack` from `Node.js`, you will need to install it manually.
 
 ```bash
-#1. Install `Yarn`
-npm install -g yarn
-
-#2. Enable corepack
-corepack enable
-
-#3. Install dependencies
-yarn install
+#1. Install
+npm install
 ```
 ___
 
@@ -38,22 +32,24 @@ ___
 
 ```bash
 # To run Storybook:
-yarn storybook
-```
+npm run storybook
 
-```bash
 # Linting & type checking the codebase:
-yarn lint:all
-```
+npm run lint:all
 
-```bash
-# Generate SVGR icon components:
-yarn generate-icons
-```
+# Check storybook issues:
+npm run storybook:doctor
 
-```bash
-# Run storybook dev server:
-yarn storybook
+# Fix formating issues:
+npm run fix:format
+
+# Fix linting issues:
+npm run fix:lint
+
+# Check packages updates:
+npm run check_package_update
+
+
 ```
 ___
 
@@ -67,7 +63,7 @@ The deployment consists of several parts:
 Package versioning handling by [`@changesets/cli`][changesets]
 
 ```bash
-yarn bump-version
+npm run bump-version
 ```
 
 ### Release packages

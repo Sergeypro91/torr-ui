@@ -26,3 +26,5 @@ tsconfig.node.tsbuildinfo
 *.sw?
 
 *storybook.log
+
+storybook-static

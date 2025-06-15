@@ -1,0 +1,137 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.0.0-beta.6/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": false
+  },
+  "formatter": {
+    "enabled": true,
+    "useEditorconfig": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 80,
+    "attributePosition": "auto",
+    "bracketSpacing": true
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": false,
+      "a11y": {
+        "recommended": false,
+        "noInteractiveElementToNoninteractiveRole": "error",
+        "noStaticElementInteractions": "error",
+        "useAltText": "error",
+        "useAriaPropsSupportedByRole": "error",
+        "useHtmlLang": "error"
+      },
+      "complexity": {
+        "noUselessFragments": "warn"
+      },
+      "correctness": {
+        "noVoidElementsWithChildren": "error",
+        "useHookAtTopLevel": "error",
+        "useJsxKeyInIterable": "error",
+        "useExhaustiveDependencies": "off"
+      },
+      "security": {
+        "noBlankTarget": "error",
+        "noDangerouslySetInnerHtml": "error"
+      },
+      "style": {
+        "noCommonJs": "error",
+        "useConsistentCurlyBraces": {
+          "level": "error",
+          "fix": "safe"
+        },
+        "useFragmentSyntax": {
+          "level": "error",
+          "fix": "safe"
+        },
+        "useSelfClosingElements": "error",
+        "useSingleVarDeclarator": "error",
+        "useThrowNewError": {
+          "level": "error",
+          "fix": "safe"
+        },
+        "useThrowOnlyError": "error"
+      },
+      "suspicious": {
+        "recommended": false,
+        "noArrayIndexKey": "warn",
+        "noCommentText": "error",
+        "noDocumentImportInPage": "error",
+        "noHeadImportInDocument": "warn",
+        "noDuplicateJsxProps": "error",
+        "noConsole": "error"
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single"
+    }
+  },
+  "html": {
+    "formatter": {
+      "enabled": true
+    }
+  },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              ":NODE:",
+              ":BAN:",
+              [":PACKAGE:", "!@*/**"],
+              ":ALIAS:",
+              "@*/**",
+              ":BLANK_LINE:",
+              "../**",
+              ":BLANK_LINE:",
+              "./**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "overrides": [
+    {
+      "includes": ["**/*.js", "*.js", "**/vite*"],
+      "linter": {
+        "rules": {
+          "recommended": false,
+          "style": {
+            "noCommonJs": "off"
+          },
+          "suspicious": {
+            "noConsole": "off"
+          }
+        }
+      }
+    },
+    {
+      "includes": ["**/.templates/**"],
+      "formatter": {
+        "enabled": false
+      },
+      "linter": {
+        "enabled": false
+      },
+      "assist": {
+        "enabled": false
+      }
+    }
+  ]
+}
