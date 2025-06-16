@@ -1,6 +1,6 @@
 {
   "name": "@torr-app/styles",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "exports": {
     "./global.css": "./dist/styles/index.css"
@@ -20,6 +20,7 @@
   },
   "scripts": {
     "build": "tsup src/**/*.ts --dts --format esm, cjs --minify --clean",
+    "publish": "npm publish --access public --workspaces",
     "check-update": "npx npm-check -u"
   },
   "devDependencies": {

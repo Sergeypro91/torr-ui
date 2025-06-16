@@ -1,6 +1,6 @@
 {
   "name": "@torr-app/utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -20,6 +20,7 @@
   },
   "scripts": {
     "build": "tsup src/**/*.ts --dts --format esm,cjs --minify --clean",
+    "publish": "npm publish --access public --workspaces",
     "check-update": "npx npm-check -u"
   },
   "devDependencies": {

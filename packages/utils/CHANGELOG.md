@@ -1,5 +1,11 @@
 # @torr-app/utils
 
+## 1.0.2
+
+### Patch Changes
+
+- Add a publication script
+
 ## 1.0.1
 
 ### Patch Changes
