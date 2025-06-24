@@ -1,24 +1,20 @@
 import { themes } from 'storybook/theming';
 import type { Preview } from '@storybook/react-vite';
-import '@torr-app/styles/global.css';
+import '../src/index.css';
 
 const preview: Preview = {
   parameters: {
     docs: {
       theme: themes.dark,
     },
-    backgrounds: {
-      default: 'black',
-      values: [
-        { name: 'black', value: '#000000' },
-        { name: 'white', value: '#ffffff' },
-      ],
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/i,
     },
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i,
-      },
+    a11y: {
+      // 'error' - fail CI on a11y violations
+      // 'off' - skip a11y checks entirely
+      test: 'todo',
     },
   },
 };

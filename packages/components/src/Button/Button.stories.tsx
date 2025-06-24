@@ -1,10 +1,9 @@
-import { ComponentProps } from 'react';
-import { fn } from 'storybook/test';
+import type { ComponentProps } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { Icon, type IconNames, iconNames } from '../Icon';
+import { ThemeProvider } from '../Theme';
 
-import { Button, ButtonProps } from './Button';
+import { Button } from './Button';
 
 type StoryProps = ComponentProps<typeof Button>;
 
@@ -16,53 +15,24 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    label: { control: { type: 'text' } },
-    color: {
-      control: { type: 'select' },
-      options: [undefined, 'primary', 'success', 'warning', 'error'],
-    },
     size: {
       control: { type: 'radio' },
-      options: ['sm', 'md', 'lg'],
+      options: [undefined, 'sm', 'lg', 'icon'] satisfies StoryProps['size'][],
     },
     variant: {
       control: { type: 'select' },
-      options: ['text', 'outline', 'ghost', 'contained'],
-    },
-    iconStart: {
-      control: 'select',
-      options: [undefined, ...iconNames],
-    },
-    iconEnd: {
-      control: 'select',
-      options: [undefined, ...iconNames],
-    },
-    disabled: {
-      control: { type: 'boolean' },
-    },
-    loading: {
-      control: { type: 'boolean' },
-    },
-    borderRadius: {
-      control: { type: 'number' },
+      options: [
+        undefined,
+        'link',
+        'outline',
+        'ghost',
+        'secondary',
+        'destructive',
+      ] satisfies StoryProps['variant'][],
     },
     asChild: {
       control: { type: 'boolean' },
     },
-  },
-  args: {
-    label: 'Button',
-    size: 'md',
-    color: undefined,
-    variant: 'contained',
-    iconStart: undefined,
-    iconEnd: undefined,
-    disabled: false,
-    loading: false,
-    fullWidth: false,
-    borderRadius: undefined,
-    onClick: fn(),
-    asChild: false,
   },
 } satisfies Meta<StoryProps>;
 
@@ -70,81 +40,12 @@ export default meta;
 
 type Story = StoryObj<StoryProps>;
 
-const ButtonTemplate = (args: ButtonProps) => {
-  const { iconStart: start, iconEnd: end, ...restArgs } = args;
-  const iconStart = start ? <Icon id={start as IconNames} /> : undefined;
-  const iconEnd = end ? <Icon id={end as IconNames} /> : undefined;
-
-  return <Button {...restArgs} {...{ iconStart, iconEnd }} />;
+export const Default: Story = {
+  render: (args) => {
+    return (
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <Button {...args}>Button</Button>
+      </ThemeProvider>
+    );
+  },
 };
-
-export const Template: Story = {
-  name: 'Template',
-  render: ButtonTemplate,
-};
-
-export const FullWidth = () => (
-  <div style={{ width: '300px' }}>
-    <Button label="Button" variant="ghost" fullWidth />
-  </div>
-);
-
-export const WithIcon = () => (
-  <div style={{ display: 'flex', gap: '16px' }}>
-    <Button
-      label="Button"
-      variant="ghost"
-      iconStart={<Icon id="home-outline" />}
-    />
-    <Button
-      label="Button"
-      variant="ghost"
-      iconEnd={<Icon id="home-outline" />}
-    />
-    <Button variant="ghost" iconEnd={<Icon id="home-outline" />} />
-  </div>
-);
-
-export const Sizes = () => (
-  <div style={{ display: 'flex', gap: '16px' }}>
-    <Button size="sm" label="Button" variant="ghost" />
-    <Button size="md" label="Button" variant="ghost" />
-    <Button size="lg" label="Button" variant="ghost" />
-  </div>
-);
-
-export const DisabledAndLoading = () => (
-  <div style={{ display: 'flex', gap: '16px' }}>
-    <Button label="Button" variant="text" disabled />
-    <Button label="Button" variant="text" loading />
-  </div>
-);
-
-export const ColorsVariant = () => (
-  <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-    <div style={{ display: 'flex', gap: '16px' }}>
-      <Button label="Button" color="primary" variant="text" />
-      <Button label="Button" color="error" variant="text" />
-      <Button label="Button" color="warning" variant="text" />
-      <Button label="Button" color="success" variant="text" />
-    </div>
-    <div style={{ display: 'flex', gap: '16px' }}>
-      <Button label="Button" color="primary" variant="outline" />
-      <Button label="Button" color="error" variant="outline" />
-      <Button label="Button" color="warning" variant="outline" />
-      <Button label="Button" color="success" variant="outline" />
-    </div>
-    <div style={{ display: 'flex', gap: '16px' }}>
-      <Button label="Button" color="primary" variant="ghost" />
-      <Button label="Button" color="error" variant="ghost" />
-      <Button label="Button" color="warning" variant="ghost" />
-      <Button label="Button" color="success" variant="ghost" />
-    </div>
-    <div style={{ display: 'flex', gap: '16px' }}>
-      <Button label="Button" color="primary" />
-      <Button label="Button" color="error" />
-      <Button label="Button" color="warning" />
-      <Button label="Button" color="success" />
-    </div>
-  </div>
-);

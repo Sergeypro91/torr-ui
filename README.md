@@ -1,83 +1,54 @@
-![Torr UI-kit][logo]
-# [Storybook Torr UI-kit][page]
+# React + TypeScript + Vite
 
-[TOC]
-___
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Introduction
+Currently, two official plugins are available:
 
-The libraries where created to standardize the development of the `Torr` application.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-Libraries consist of several sub-packages / workspaces:
-- `@torr-ui/components`
-- `@torr-ui/icons`
-- `@torr-ui/styles`
-- `@torr-ui/utils`
+## Expanding the ESLint configuration
 
-Libraries use `Yarn` as project manager.
-___
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-## Installation
-
-> Be careful!
-> At the time of removing `corepack` from `Node.js`, you will need to install it manually.
-
-```bash
-#1. Install
-npm install
-```
-___
-
-## Development
-
-```bash
-# To run Storybook:
-npm run storybook
-
-# Linting & type checking the codebase:
-npm run lint:all
-
-# Check storybook issues:
-npm run storybook:doctor
-
-# Fix formating issues:
-npm run format:fix
-
-# Fix linting issues:
-npm run lint:fix
-
-# Check packages updates:
-npm run check_package_update
-
-
-```
-___
-
-## Deployment
-The deployment consists of several parts:
-* Package versioning
-* Release packages
-* Deploy Storybook to GitHub pages
-
-### Package versioning
-Package versioning handling by [`@changesets/cli`][changesets]
-
-```bash
-npm run packages:bump-version
+```js
+export default tseslint.config({
+  extends: [
+    // Remove ...tseslint.configs.recommended and replace with this
+    ...tseslint.configs.recommendedTypeChecked,
+    // Alternatively, use this for stricter rules
+    ...tseslint.configs.strictTypeChecked,
+    // Optionally, add this for stylistic rules
+    ...tseslint.configs.stylisticTypeChecked,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
 ```
 
-### Release packages
-For releasing packages in `NPM`, responsible `GitHub Actions`:
-* [`/.github/workflows/main.yml`][ci-lint] - lint codebase
-* [`/.github/workflows/publish.yml`][ci-publish] - push new version to `NPM`
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-### Deploy Storybook to GitHub Pages
-For deployment Storybook to `GitHub Pagase`, responsible `GitHub Actions`:
-* [`/.github/workflows/deploy.story.yml`][ci-deploy-page] - lint codebase
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-[logo]: https://raw.githubusercontent.com/Sergeypro91/torr-ui/dd2a94d001c9e835c7ecfffcb0686ed727f5df30/public/torr-icon.svg "Storybook Torr UI-kit logo"
-[page]: https://sergeypro91.github.io/torr-ui/?path=/docs/components-button--docs "Storybook page"
-[changesets]: https://github.com/changesets/changesets/tree/main#readme "Changesets documentation"
-[ci-lint]: https://github.com/Sergeypro91/torr-ui/blob/main/.github/workflows/main.yml "Linting workflow"
-[ci-publish]: https://github.com/Sergeypro91/torr-ui/blob/main/.github/workflows/publish.yml "Publish workflow"
-[ci-deploy-page]: https://github.com/Sergeypro91/torr-ui/blob/main/.github/workflows/deploy.story.yml "Deploy Storybook to GitHub Pages"
+export default tseslint.config({
+  plugins: {
+    // Add the react-x and react-dom plugins
+    'react-x': reactX,
+    'react-dom': reactDom,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended typescript rules
+    ...reactX.configs['recommended-typescript'].rules,
+    ...reactDom.configs.recommended.rules,
+  },
+})
+```

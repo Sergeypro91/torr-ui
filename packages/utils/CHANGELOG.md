@@ -1,5 +1,18 @@
 # @torr-app/utils
 
+## 1.0.3
+
+### Patch Changes
+
+- Add new components & up Storybook version & add tsup.config.ts
+  New components:
+
+  - Copy
+  - DropdownMenu
+  - Input
+  - Label
+  - Theme
+
 ## 1.0.2
 
 ### Patch Changes

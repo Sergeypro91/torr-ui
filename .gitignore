@@ -9,10 +9,8 @@ lerna-debug.log*
 
 node_modules
 dist
-lib
 dist-ssr
 *.local
-tsconfig.node.tsbuildinfo
 
 # Editor directories and files
 .vscode/*
@@ -26,5 +24,4 @@ tsconfig.node.tsbuildinfo
 *.sw?
 
 *storybook.log
-
 storybook-static

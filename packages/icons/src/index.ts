@@ -1,1 +1,1 @@
-export { type IconNames, iconNames } from '../public/name.ts';
+export { type IconNames, iconNames } from '../public/name';

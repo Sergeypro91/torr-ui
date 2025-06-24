@@ -1,6 +1,6 @@
 {
   "name": "@torr-app/icons",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -28,18 +28,20 @@
   "scripts": {
     "svg:minimize": "svgo -f src/svg-raw -o src/svg-sources && rm src/svg-raw/*",
     "sprite-icon:build": "tsx src/build-icons.mts --log=verbose",
-    "build": "tsup src/**/*.ts --dts --format esm,cjs --minify --clean",
+    "build": "tsup",
     "publish": "npm publish --access public --workspaces",
     "check-update": "npx npm-check -u"
   },
   "dependencies": {
     "fs-extra": "^11.3.0",
-    "glob": "^11.0.3",
     "node-html-parser": "^7.0.1"
   },
   "devDependencies": {
     "@types/fs-extra": "^11.0.4",
-    "tsup": "^8.5.0",
-    "tsx": "^4.20.3"
+    "tsup": "^8.5.0"
+  },
+  "peerDependencies": {
+    "glob": "*",
+    "tsx": "*"
   }
 }

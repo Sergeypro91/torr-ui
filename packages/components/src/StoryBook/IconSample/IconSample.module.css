@@ -1,32 +1,56 @@
 .icon-sample {
+  width: 100px;
+  aspect-ratio: 1;
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   flex-direction: column;
   gap: 1rem;
+  padding: calc(var(--spacing) * 2);
+  border-radius: var(--radius-sm);
   cursor: pointer;
+  transition: background-color 300ms;
 
-  &::before {
+  .label {
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: var(--color-ring);
+  }
+
+  .icon {
     position: absolute;
     top: 0;
     right: 0;
     display: none;
-    content: "Copied!";
-    background-color: var(--success);
-    padding: var(--module);
-    border-radius: var(--module);
+    margin: var(--spacing);
+    background-color: var(--color-accent);
     opacity: 0;
-    transition-property: display, opacity;
+    transition-property: display, opacity, color;
     transition-duration: 300ms;
     transition-behavior: allow-discrete;
   }
 
-  &[data-is-copied="true"]::before {
-    display: block;
-    opacity: 1;
+  .icon[data-is-copied="true"] {
+    color: var(--color-chart-2);
+  }
 
-    @starting-style {
-      opacity: 0;
+  &:hover {
+    background-color: var(--accent);
+
+    .icon {
+      display: block;
+      opacity: 0.5;
+
+      @starting-style {
+        opacity: 0.5;
+      }
+
+      &[data-is-copied="true"] {
+        opacity: 1;
+      }
     }
   }
 }

@@ -9,5 +9,8 @@ addons.setConfig({
     brandImage:
       'https://raw.githubusercontent.com/Sergeypro91/torr-ui/dd2a94d001c9e835c7ecfffcb0686ed727f5df30/public/torr-icon.svg',
     brandTarget: '_self',
+    //
+    colorPrimary: '#ffffff',
+    colorSecondary: '#555555',
   }),
 });

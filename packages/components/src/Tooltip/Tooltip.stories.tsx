@@ -13,15 +13,17 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {
-    label: { control: { type: 'text' } },
-    placement: {
-      control: { type: 'select' },
-      options: ['top', 'bottom', 'left', 'right'],
+    label: {
+      type: 'string',
+      description: 'Label',
+    },
+    children: {
+      control: { type: 'object' },
     },
   },
   args: {
-    label: 'Test',
-    placement: 'top',
+    label: 'Hover',
+    children: 'Tooltip',
   },
 } satisfies Meta<StoryProps>;
 
@@ -29,15 +31,24 @@ export default meta;
 
 type Story = StoryObj<StoryProps>;
 
-const TooltipTemplate = (args: TooltipProps) => {
-  return <Tooltip {...args} />;
+const TooltipTemplate = ({ label, children }: TooltipProps) => {
+  return <Tooltip label={label}>{children}</Tooltip>;
 };
 
 export const Template: Story = {
   name: 'Template',
-  render: (args) => (
-    <TooltipTemplate {...args}>
-      <div>Some text</div>
-    </TooltipTemplate>
-  ),
+  render: TooltipTemplate,
+};
+
+export const BaseOnNode: Story = {
+  name: 'BaseOnNode',
+  render: () => {
+    const Label = () => <p>Tooltip in paragraph</p>;
+
+    return (
+      <Tooltip label={<Label />}>
+        <p>Paragraph element</p>
+      </Tooltip>
+    );
+  },
 };

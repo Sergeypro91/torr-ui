@@ -1,9 +1,9 @@
 import { PropsWithChildren } from 'react';
 
-import { type IconNames } from '../../Icon';
+import { useCopy } from '../../Copy';
+import { Icon, type IconNames } from '../../Icon';
 
 import style from './IconSample.module.css';
-import { useLogic } from './useLogic';
 
 type Props = PropsWithChildren & {
   name: IconNames;
@@ -11,18 +11,23 @@ type Props = PropsWithChildren & {
 
 export const IconSample = (props: Props) => {
   const { children, name } = props;
-
-  const { isCopied, handleCopyToClipboard } = useLogic();
+  const { isCopied, handleCopyToClipboard } = useCopy();
+  const copyIcon: IconNames = isCopied ? 'copy-check' : 'copy';
 
   return (
     <button
       type="button"
       className={style['icon-sample']}
-      data-is-copied={isCopied}
-      onClick={() => handleCopyToClipboard(name)}
+      onClick={handleCopyToClipboard(name)}
     >
       {children}
-      <span>{name}</span>
+      <Icon
+        id={copyIcon}
+        size={16}
+        data-is-copied={isCopied}
+        className={style['icon']}
+      />
+      <span className={style['label']}>{name}</span>
     </button>
   );
 };

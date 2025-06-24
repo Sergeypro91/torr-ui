@@ -16,6 +16,7 @@ export const Icon = ({ id, size = 24, ...props }: IconProps) => {
       height={size}
       fill="currentColor"
       data-testid="icon"
+      viewBox="0 0 24 24"
       {...props}
     >
       <use href={`${sprite}#${id}`} />
