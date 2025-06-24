@@ -11,7 +11,7 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'extra-primitive'],
   argTypes: {
     label: {
       type: 'string',

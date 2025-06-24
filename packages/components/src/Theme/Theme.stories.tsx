@@ -12,7 +12,7 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'theming'],
   argTypes: {
     defaultTheme: {
       control: { type: 'radio' },

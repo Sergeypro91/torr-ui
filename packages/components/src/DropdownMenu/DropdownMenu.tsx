@@ -26,11 +26,13 @@ export const DropdownMenu = ({ ...props }: DropdownMenuProps) => {
   return <Root data-slot="dropdown-menu" {...props} />;
 };
 
+DropdownMenu.displayName = 'DropdownMenu';
 export type DropdownMenuPortalProps = ComponentProps<typeof Portal>;
 
 export const DropdownMenuPortal = ({ ...props }: DropdownMenuPortalProps) => {
   return <Portal data-slot="dropdown-menu-portal" {...props} />;
 };
+DropdownMenuPortal.displayName = 'DropdownMenuPortal';
 
 export type DropdownMenuTriggerProps = ComponentProps<typeof Trigger>;
 
@@ -38,6 +40,7 @@ export const DropdownMenuTrigger = ({ ...props }: DropdownMenuTriggerProps) => {
   return <Trigger data-slot="dropdown-menu-trigger" {...props} />;
 };
 
+DropdownMenuTrigger.displayName = 'DropdownMenuTrigger';
 export type DropdownMenuContentProps = ComponentProps<typeof Content>;
 
 export const DropdownMenuContent = ({
@@ -59,6 +62,7 @@ export const DropdownMenuContent = ({
     </Portal>
   );
 };
+DropdownMenuContent.displayName = 'DropdownMenuContent';
 
 export type DropdownMenuGroupProps = ComponentProps<typeof Group>;
 
@@ -66,6 +70,7 @@ export const DropdownMenuGroup = ({ ...props }: DropdownMenuGroupProps) => {
   return <Group data-slot="dropdown-menu-group" {...props} />;
 };
 
+DropdownMenuGroup.displayName = 'DropdownMenuGroup';
 export type DropdownMenuItemProps = ComponentProps<typeof Item> & {
   inset?: boolean;
   variant?: 'default' | 'destructive';
@@ -90,6 +95,7 @@ export const DropdownMenuItem = ({
     />
   );
 };
+DropdownMenuItem.displayName = 'DropdownMenuItem';
 
 export type DropdownMenuCheckboxItemProps = ComponentProps<typeof CheckboxItem>;
 
@@ -119,6 +125,7 @@ export const DropdownMenuCheckboxItem = ({
   );
 };
 
+DropdownMenuCheckboxItem.displayName = 'DropdownMenuCheckboxItem';
 export type DropdownMenuRadioGroupProps = ComponentProps<typeof RadioGroup>;
 
 export const DropdownMenuRadioGroup = ({
@@ -126,6 +133,8 @@ export const DropdownMenuRadioGroup = ({
 }: DropdownMenuRadioGroupProps) => {
   return <RadioGroup data-slot="dropdown-menu-radio-group" {...props} />;
 };
+
+DropdownMenuRadioGroup.displayName = 'DropdownMenuRadioGroup';
 
 export type DropdownMenuRadioItemProps = ComponentProps<typeof RadioItem>;
 
@@ -153,6 +162,8 @@ export const DropdownMenuRadioItem = ({
   );
 };
 
+DropdownMenuRadioItem.displayName = 'DropdownMenuRadioItem';
+
 export type DropdownMenuLabelProps = ComponentProps<typeof Label> & {
   inset?: boolean;
 };
@@ -175,6 +186,8 @@ export const DropdownMenuLabel = ({
   );
 };
 
+DropdownMenuLabel.displayName = 'DropdownMenuLabel';
+
 export type DropdownMenuSeparatorProps = ComponentProps<typeof Separator>;
 
 export const DropdownMenuSeparator = ({
@@ -189,6 +202,8 @@ export const DropdownMenuSeparator = ({
     />
   );
 };
+
+DropdownMenuSeparator.displayName = 'DropdownMenuSeparator';
 
 export type DropdownMenuShortcutProps = ComponentProps<'span'>;
 
@@ -208,11 +223,15 @@ export const DropdownMenuShortcut = ({
   );
 };
 
+DropdownMenuShortcut.displayName = 'DropdownMenuShortcut';
+
 export type DropdownMenuSubProps = ComponentProps<typeof Sub>;
 
 export const DropdownMenuSub = ({ ...props }: DropdownMenuSubProps) => {
   return <Sub data-slot="dropdown-menu-sub" {...props} />;
 };
+
+DropdownMenuSub.displayName = 'DropdownMenuSub';
 
 export type DropdownMenuSubTriggerProps = ComponentProps<typeof SubTrigger> & {
   inset?: boolean;
@@ -240,6 +259,8 @@ export const DropdownMenuSubTrigger = ({
   );
 };
 
+DropdownMenuSubTrigger.displayName = 'DropdownMenuSubTrigger';
+
 export type DropdownMenuSubContentProps = ComponentProps<typeof SubContent>;
 
 export const DropdownMenuSubContent = ({
@@ -257,3 +278,5 @@ export const DropdownMenuSubContent = ({
     />
   );
 };
+
+DropdownMenuSubContent.displayName = 'DropdownMenuSubContent';

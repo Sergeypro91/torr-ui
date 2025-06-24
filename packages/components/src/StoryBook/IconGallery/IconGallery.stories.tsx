@@ -15,6 +15,7 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
+  tags: ['autodocs', 'internal'],
   argTypes: {
     search: {
       control: { type: 'text' },

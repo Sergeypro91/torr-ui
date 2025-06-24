@@ -13,7 +13,7 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'primitive'],
   argTypes: {
     htmlFor: {
       type: 'string',
@@ -25,7 +25,7 @@ export default meta;
 
 type Story = StoryObj<StoryProps>;
 
-export const Default: Story = {
+export const LabelDefault: Story = {
   render: (args) => {
     const { htmlFor = 'default' } = args;
 

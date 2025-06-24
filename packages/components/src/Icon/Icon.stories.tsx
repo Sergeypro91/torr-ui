@@ -1,7 +1,7 @@
 import { ComponentProps } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Icon, type IconProps, iconNames } from './Icon';
+import { Icon, iconNames } from './Icon';
 
 type StoryProps = ComponentProps<typeof Icon>;
 
@@ -11,7 +11,7 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'primitive'],
   argTypes: {
     id: {
       control: { type: 'select' },
@@ -21,19 +21,16 @@ const meta = {
       control: { type: 'number', min: 12, max: 38, step: 4 },
     },
   },
-  args: {
-    id: 'home-outline',
-    size: 24,
-  },
 } satisfies Meta<StoryProps>;
 
 export default meta;
 
 type Story = StoryObj<StoryProps>;
 
-const IconTemplate = (args: IconProps) => <Icon {...args} />;
-
-export const Template: Story = {
-  name: 'Template',
-  render: IconTemplate,
+export const IconDefault: Story = {
+  args: {
+    id: 'home-outline',
+    size: 24,
+  },
+  render: (args) => <Icon {...args} />,
 };

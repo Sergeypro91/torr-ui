@@ -29,7 +29,7 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'windows'],
   argTypes: {},
 } satisfies Meta<StoryProps>;
 

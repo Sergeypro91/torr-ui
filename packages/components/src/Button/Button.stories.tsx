@@ -13,7 +13,7 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'primitive'],
   argTypes: {
     size: {
       control: { type: 'radio' },

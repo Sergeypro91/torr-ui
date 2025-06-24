@@ -14,7 +14,7 @@ const meta = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  tags: ['autodocs', 'primitive'],
   argTypes: {
     id: {
       type: 'string',
@@ -41,45 +41,38 @@ export default meta;
 
 type Story = StoryObj<StoryProps>;
 
-export const Default: Story = {
-  render: (args) => {
-    const {
-      id = 'default',
-      type = 'text',
-      placeholder = 'Enter text here',
-    } = args;
-
-    return (
-      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-        <Input {...args} id={id} type={type} placeholder={placeholder} />
-      </ThemeProvider>
-    );
+export const InputDefault: Story = {
+  args: {
+    type: 'text',
+    placeholder: 'Enter text here',
   },
+  render: (args) => (
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <Input {...args} />
+    </ThemeProvider>
+  ),
 };
 
 export const File: Story = {
-  render: (args) => {
-    const { id = 'picture', type = 'file' } = args;
-
-    return (
-      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-        <div className="grid w-full max-w-sm items-center gap-3">
-          <Label htmlFor={id}>Picture</Label>
-          <Input {...args} id={id} type={type} />
-        </div>
-      </ThemeProvider>
-    );
+  args: {
+    id: 'picture',
+    type: 'file',
   },
+  render: (args) => (
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <div className="grid w-full max-w-sm items-center gap-3">
+        <Label htmlFor={args.id}>Picture</Label>
+        <Input {...args} />
+      </div>
+    </ThemeProvider>
+  ),
 };
 
 export const Disabled: Story = {
-  render: (args) => {
-    const { type = 'email', placeholder = 'Email' } = args;
-
-    return (
-      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-        <Input {...args} disabled type={type} placeholder={placeholder} />
-      </ThemeProvider>
-    );
-  },
+  args: { type: 'email', placeholder: 'Email', disabled: true },
+  render: (args) => (
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <Input {...args} />
+    </ThemeProvider>
+  ),
 };

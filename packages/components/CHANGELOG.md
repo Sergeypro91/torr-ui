@@ -1,5 +1,16 @@
 # @torr-app/components
 
+## 1.2.0
+
+### Minor Changes
+
+- Add new components
+
+### Patch Changes
+
+- Updated dependencies
+  - @torr-app/icons@1.2.0
+
 ## 1.1.0
 
 ### Minor Changes
