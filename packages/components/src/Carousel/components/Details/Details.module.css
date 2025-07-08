@@ -1,0 +1,8 @@
+.details {
+  width: 100%;
+  min-height: 10rem;
+  position: absolute;
+  padding-bottom: var(--nav-h);
+  bottom: 0;
+  background: linear-gradient(0deg, var(--color-background), transparent);
+}

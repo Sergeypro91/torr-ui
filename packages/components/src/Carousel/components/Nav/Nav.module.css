@@ -1,0 +1,123 @@
+.nav {
+  width: 100%;
+  height: var(--nav-h);
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.navbar {
+  --navbar-padding: 0.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--navbar-padding);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 0 0;
+    display: block;
+    transform-origin: center;
+    background-color: transparent;
+    border-radius: calc(var(--size-h) + var(--navbar-padding));
+    transition: all 300ms;
+    transform: scale3d(0, 0, 1);
+    backdrop-filter: blur(0px);
+  }
+
+  &:hover::before {
+    background-color: color-mix(
+      in oklch,
+      var(--color-secondary),
+      transparent 80%
+    );
+    backdrop-filter: blur(15px);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.dot {
+  --multipiler: 1;
+  --size-w: calc(var(--size-h) * var(--multipiler));
+  --size-h: 1rem;
+  --size-p: 0.25rem;
+  --timer: 0ms;
+  position: relative;
+  touch-action: manipulation;
+  cursor: pointer;
+  border: 0;
+  padding: var(--size-p);
+  margin: 0;
+  height: calc(var(--size-h) + var(--size-p) * 2);
+  border-radius: var(--radius-xl);
+  transition: all 300ms;
+  display: flex;
+
+  &:hover::before {
+    background-color: var(--color-muted);
+  }
+
+  &:focus-visible {
+    outline: none;
+
+    &::before {
+      outline: 3px solid
+        color-mix(in oklch, var(--color-foreground), transparent 80%);
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    width: var(--size-w);
+    height: var(--size-h);
+    transition: all 300ms;
+    border-radius: var(--radius-xl);
+  }
+
+  &::after {
+    position: absolute;
+    inset: var(--size-p) 0 0 var(--size-p);
+    background-color: transparent;
+    transform: scale3d(0, 0, 0);
+  }
+
+  &::before {
+    background-color: var(--color-card);
+  }
+
+  &:first-child,
+  &:last-child {
+    transform: scale3d(0.8, 0.8, 0.8);
+  }
+}
+
+.dot--selected {
+  --multipiler: 2.5;
+
+  &::after {
+    border: 1px solid var(--color-card);
+    background-color: var(--color-muted-foreground);
+    animation-name: progress;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-duration: var(--timer);
+    transform: scale3d(1, 1, 1);
+  }
+
+  &:first-child,
+  &:last-child {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes progress {
+  0% {
+    width: var(--size-h);
+  }
+}

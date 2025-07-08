@@ -1,5 +1,11 @@
 # @torr-app/utils
 
+## 1.1.0
+
+### Minor Changes
+
+- Add new components
+
 ## 1.0.3
 
 ### Patch Changes

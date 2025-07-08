@@ -7,7 +7,7 @@ import { ThemeToggle } from './ThemeToggle';
 type StoryProps = ComponentProps<typeof ThemeProvider>;
 
 const meta = {
-  title: 'Theme/Toggle',
+  title: 'Theme/ThemeToggle',
   component: ThemeProvider,
   parameters: {
     layout: 'centered',
@@ -37,15 +37,10 @@ export default meta;
 
 type Story = StoryObj<StoryProps>;
 
-const ThemeTemplate = (args: StoryProps) => {
-  return (
+export const ToggleDefault: Story = {
+  render: (args) => (
     <ThemeProvider {...args}>
       <ThemeToggle />
     </ThemeProvider>
-  );
-};
-
-export const Toggle: Story = {
-  name: 'Template',
-  render: ThemeTemplate,
+  ),
 };

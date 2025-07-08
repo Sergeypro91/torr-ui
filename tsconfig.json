@@ -11,5 +11,6 @@
       "#ui/*": ["./packages/components/src/*"]
     },
     "jsx": "react-jsx"
-  }
+  },
+  "include": ["vite-env.d.ts"]
 }

@@ -1,5 +1,5 @@
 import { ComponentProps } from 'react';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { ThemeProvider } from '../Theme';
 
@@ -33,7 +33,7 @@ export const AccordionDefault: Story = {
         <Accordion
           type="single"
           collapsible
-          className="w-full"
+          className="w-[500px]"
           defaultValue="item-1"
         >
           <AccordionItem value="item-1">

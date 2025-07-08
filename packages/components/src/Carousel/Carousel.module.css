@@ -1,0 +1,41 @@
+.carousel {
+  --ratio: 1;
+  --parallax-offset: 0px;
+  --text-body: rgb(222, 222, 222);
+  --background-site: rgb(0, 0, 0);
+  --slide-height: 19rem;
+  --slide-spacing: 1rem;
+  --slide-size: 100%;
+  --nav-h: 4rem;
+  --multipiler: 1;
+  --size-h: 1rem;
+  --size-w: calc(var(--size-h) * var(--multipiler));
+  --size-p: 0.25rem;
+  --timer: 0ms;
+  max-width: 48rem;
+  position: relative;
+  display: flex;
+  margin: auto;
+  aspect-ratio: var(--ratio);
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0 0 0 0;
+    background-color: var(--muted);
+    animation: var(--animate-pulse);
+  }
+}
+
+.viewport {
+  flex: 1 100%;
+  overflow: hidden;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+}

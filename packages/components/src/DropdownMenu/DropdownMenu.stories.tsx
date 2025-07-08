@@ -1,6 +1,6 @@
 import { ComponentProps, useState } from 'react';
 import { DropdownMenuCheckboxItemProps } from '@radix-ui/react-dropdown-menu';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { Button } from '../Button';
 import { ThemeProvider } from '../Theme';

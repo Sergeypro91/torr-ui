@@ -21,7 +21,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es6",
+    "target": "ES2022",
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -30,7 +30,7 @@
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true
   },
-  "types": ["vitest/globals"],
-  "include": ["./**/*.ts", "./**/*.tsx", "./*.js", "./*.ts"],
+  "types": ["vitest/globals", "vite/client"],
+  "include": ["vite-env.d.ts", "./**/*.ts", "./**/*.tsx", "./*.js", "./*.ts"],
   "exclude": ["lib"]
 }
