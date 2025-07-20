@@ -1,4 +1,4 @@
-import { EmblaCarouselType } from 'embla-carousel/esm';
+import { EmblaCarouselType } from 'embla-carousel';
 import { useCallback, useEffect, useState } from 'react';
 
 import { useCarouselContext } from '../../../context';

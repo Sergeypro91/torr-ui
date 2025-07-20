@@ -11,6 +11,7 @@ export * from './Checkbox';
 export * from './Copy';
 export * from './DatePicker';
 export * from './Dialog';
+export * from './DialogDrawer';
 export * from './Drawer';
 export * from './DropdownMenu';
 export * from './HoverCard';
