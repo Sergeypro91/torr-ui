@@ -24,5 +24,5 @@ module.exports = {
     .filter(([pkg]) =>
       fs.existsSync(path.join(packagesDir, pkg, 'package.json')),
     )
-    .map(([pkg]) => `./packages/${pkg}/release.config.js`),
+    .map(([pkg]) => `./packages/${pkg}/release.config.cjs`),
 };
