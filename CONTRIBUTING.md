@@ -2,7 +2,6 @@
 
 Each commit message consists of a **header**, a **body**, and a **footer**.
 
-
 ```
 <header>
 <BLANK LINE>
