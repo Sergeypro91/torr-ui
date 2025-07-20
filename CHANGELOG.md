@@ -1,3 +1,11 @@
+# [1.1.0](https://github.com/Sergeypro91/torr-ui/compare/v1.0.0...v1.1.0) (2025-07-20)
+
+
+### Features
+
+* **semver:** fix semver config ([38ed2d1](https://github.com/Sergeypro91/torr-ui/commit/38ed2d165ec33247965ebffcba8449db21ff97ff))
+* **semver:** fix semver config ([3db840e](https://github.com/Sergeypro91/torr-ui/commit/3db840e72be3823922341e154f628aa09fd19487))
+
 # 1.0.0 (2025-07-20)
 
 
