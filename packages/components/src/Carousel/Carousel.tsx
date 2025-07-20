@@ -1,6 +1,6 @@
 import { EmblaOptionsType } from 'embla-carousel';
 import { type CSSProperties, type ReactNode } from 'react';
-import { getKey } from '@torr-app/utils/src';
+import { getKey } from '@torr-app/utils';
 
 import style from './Carousel.module.css';
 import { Nav, Slide } from './components';

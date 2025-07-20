@@ -1,5 +1,5 @@
 import { CSSProperties } from 'react';
-import { cn, getKey } from '@torr-app/utils/src';
+import { cn, getKey } from '@torr-app/utils';
 
 import { DotButton } from '../DotButton';
 

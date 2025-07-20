@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { cn } from '@torr-app/utils/src';
+import { cn } from '@torr-app/utils';
 
 import { Details } from '../Details';
 
