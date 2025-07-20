@@ -1,16 +1,35 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ],
   "compilerOptions": {
-    "baseUrl": ".",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "declaration": true,
+
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@/*": ["./src/*"],
-      "#ui/*": ["./packages/components/src/*"]
+      "@torr/*": ["./*"],
+      "public/*": ["./application/public/*"]
     },
-    "jsx": "react-jsx"
+    "allowJs": true
   },
-  "include": ["vite-env.d.ts"]
+  "include": ["global.d.ts", "vite-env.d.ts", "**/*.ts", "**/*.tsx", "./*.js"],
+  "exclude": ["node_modules"],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
 }

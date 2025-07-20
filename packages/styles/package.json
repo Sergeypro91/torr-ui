@@ -16,7 +16,8 @@
     "directory": "packages/styles"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "build": "tsup",

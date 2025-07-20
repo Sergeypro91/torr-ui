@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 import { ComponentProps, HTMLAttributes } from 'react';
-import { cn } from '@torr-app/utils/src';
+import { cn } from '@torr-app/utils';
 
 export const typoVariant = {
   h1: 'scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance',

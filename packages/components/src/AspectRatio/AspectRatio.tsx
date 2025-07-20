@@ -1,5 +1,5 @@
 import { ComponentProps } from 'react';
-import { cn } from '@torr-app/utils/src';
+import { cn } from '@torr-app/utils';
 
 export type AspectRatioProps = ComponentProps<'img'> & {
   ratio: number;
