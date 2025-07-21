@@ -9,7 +9,4 @@ module.exports = {
   ],
   preset: 'angular',
   ci: true,
-  monorepo: {
-    packages: ['packages/*'],
-  },
 };

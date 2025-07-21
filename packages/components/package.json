@@ -22,7 +22,8 @@
   "scripts": {
     "build": "tsup",
     "publish": "npm publish --access public --workspaces",
-    "check-update": "npx npm-check -u"
+    "check-update": "npx npm-check -u",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",

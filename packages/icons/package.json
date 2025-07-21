@@ -31,7 +31,8 @@
     "sprite-icon:build": "tsx src/build-icons.mts --log=verbose",
     "build": "tsup",
     "publish": "npm publish --access public --workspaces",
-    "check-update": "npx npm-check -u"
+    "check-update": "npx npm-check -u",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "fs-extra": "^11.3.0",

@@ -22,7 +22,8 @@
   "scripts": {
     "build": "tsup",
     "publish": "npm publish --access public --workspaces",
-    "check-update": "npx npm-check -u"
+    "check-update": "npx npm-check -u",
+    "semantic-release": "semantic-release"
   },
   "devDependencies": {
     "tsup": "^8.5.0"
