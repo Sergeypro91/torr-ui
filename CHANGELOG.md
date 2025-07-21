@@ -1,3 +1,13 @@
+# [1.2.0](https://github.com/Sergeypro91/torr-ui/compare/v1.1.0...v1.2.0) (2025-07-21)
+
+
+### Features
+
+* **gemini:** rebuild config ([6dc5597](https://github.com/Sergeypro91/torr-ui/commit/6dc5597b19f1d542a4d3c10685ffaaac9a05f8ca))
+* **gemini:** rebuild config ([a9b4fb8](https://github.com/Sergeypro91/torr-ui/commit/a9b4fb87051f26cc1e782eda7222f3dd2aa9263a))
+* **semver:** rebuild config ([3cbde8b](https://github.com/Sergeypro91/torr-ui/commit/3cbde8b0d8d1bfac95fc9802cdb0a37d3e2c5d9e))
+* **semver:** rebuild config ([7350ab7](https://github.com/Sergeypro91/torr-ui/commit/7350ab7c7bfa7325b6a22425df0312fd90541e00))
+
 # [1.1.0](https://github.com/Sergeypro91/torr-ui/compare/v1.0.0...v1.1.0) (2025-07-20)
 
 
