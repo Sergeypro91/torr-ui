@@ -1,10 +1,15 @@
 module.exports = {
   branches: ['main'],
-  plugins: [],
-  extends: [
-    './packages/components/release.config.cjs',
-    './packages/icons/release.config.cjs',
-    './packages/styles/release.config.cjs',
-    './packages/utils/release.config.cjs',
+  plugins: [
+    '@semantic-release/commit-analyzer',
+    '@semantic-release/release-notes-generator',
+    '@semantic-release/changelog',
+    '@semantic-release/npm',
+    '@semantic-release/git',
   ],
+  preset: 'angular',
+  ci: true,
+  monorepo: {
+    packages: ['packages/*'],
+  },
 };
